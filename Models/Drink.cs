@@ -15,7 +15,7 @@ namespace Burgershack.Models
     }
 
 
-    {
+
     public Drink(string name, double price, string desc) : base(name, price, desc)
     {
     }
