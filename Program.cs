@@ -9,6 +9,10 @@ namespace Burgershack
     {
       Console.Clear();
       MenuItemController mic = new MenuItemController();
+      while (true)
+      {
+        mic.GetInput();
+      }
 
 
     }

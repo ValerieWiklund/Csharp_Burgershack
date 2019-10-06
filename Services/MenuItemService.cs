@@ -23,14 +23,28 @@ namespace Burgershack.Services
       Items.AddRange(new MenuItem[] { burger, chburger, soda, shake, fries, tots });
     }
 
+    internal void GetMenu(int index)
+    {
+      if (index < Items.Count && index > -1)
+      {
+        MenuItem item = Items[index];
+        Messages.Add(item.GetTemplate());
+      }
+      else
+      {
+        Messages.Add("Invalid Choice");
+      }
+
+    }
+
 
     public void GetMenu()
     {
       Messages.Add("Menu");
       for (int i = 0; i < Items.Count; i++)
       {
-        MenuItem Item = Items[i];
-        Messages.Add($"{i + 1}: {Item.Name} - {Item.Price}");
+        MenuItem item = Items[i];
+        Messages.Add($"{i + 1}: {item.Name} - {item.Price}");
       }
       Messages.Add("Type a number to see details or Q to quit");
     }
